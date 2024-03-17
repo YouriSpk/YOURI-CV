@@ -9,9 +9,16 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  get 'skills', to: 'skills#index'
-  get 'degree', to: 'degree#index'
-  get 'work_experience', to: 'work_experience#index'
-  get 'contact', to: 'contact#index'
+   # Routes for Skill model
+   resources :skills
+
+   # Routes for Degree model
+   resources :degrees
+
+   # Routes for WorkExperience model
+   resources :work_experiences
+
+   # Routes for Contact model
+   resources :contacts, only: [:new, :create]
 
 end

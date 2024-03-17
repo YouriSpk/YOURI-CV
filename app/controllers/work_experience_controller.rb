@@ -1,2 +1,0 @@
-class WorkExperienceController < ApplicationController
-end
