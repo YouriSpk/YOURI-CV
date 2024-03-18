@@ -1,0 +1,19 @@
+<h1>Liste des expériences professionnelles</h1>
+
+<% if @work_experiences.any? %>
+  <ul>
+    <% @work_experiences.each do |experience| %>
+      <li>
+        <%= link_to experience.title, work_experience_path(experience) %>
+        <br>
+        <%= experience.company %>
+        <br>
+        <%= experience.start_date %> - <%= experience.end_date %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Aucune expérience professionnelle trouvée.</p>
+<% end %>
+
+<%= link_to "Ajouter une nouvelle expérience professionnelle", new_work_experience_path %>

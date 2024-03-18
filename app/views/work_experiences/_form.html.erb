@@ -1,0 +1,27 @@
+<%= simple_form_for(@work_experience, html: { class: 'work-experience-form' }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="field">
+    <%= f.input :title %>
+  </div>
+
+  <div class="field">
+    <%= f.input :company %>
+  </div>
+
+  <div class="field">
+    <%= f.input :description %>
+  </div>
+
+  <div class="field">
+    <%= f.input :start_date, as: :date_select, include_blank: false %>
+  </div>
+
+  <div class="field">
+    <%= f.input :end_date, as: :date_select, include_blank: false %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

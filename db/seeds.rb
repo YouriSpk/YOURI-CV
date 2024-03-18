@@ -27,3 +27,27 @@
 #end
 
 #puts "Compétences créées avec succès!"
+work_experiences_data = [
+  {
+    title: "Full Stack Web Developer",
+    company: "Marin Digital Agency",
+    description: "Développement web",
+    start_date: Date.new(2024, 2),
+    end_date: Date.today
+  },
+  {
+    title: "IT Systemadmin",
+    company: "Joblift",
+    description: "Gestion d’inventaire, Google Workspace, Scanners, Science informatique, Microsoft Windows, Bitwarden, JIRA, Installation matérielle, Windows 10, TeamViewer, Processus ITIL, Confluence, Git, Asana, Centre d'assistance, English, Ingénierie électronique, Gestion de projet, Suite Atlassian, Mac, Personio, Zoom",
+    start_date: Date.new(2022, 5),
+    end_date: Date.new(2023, 8)
+  },
+  # Ajoutez d'autres expériences professionnelles ici...
+]
+
+# Création des expériences professionnelles à partir des données
+work_experiences_data.each do |experience_data|
+  WorkExperience.create!(experience_data)
+end
+
+puts "Expériences professionnelles créées avec succès!"

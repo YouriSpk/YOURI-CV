@@ -4,10 +4,9 @@
   </head>
   <body>
     <h1>Liste des compétences</h1>
-    <!-- Afficher la liste des compétences ici -->
-      <ul>
+    <ul>
       <% @skills.each do |skill| %>
-        <li><%= skill.name %></li>
+        <li><%= link_to skill.name, skill %></li>
       <% end %>
     </ul>
   </body>

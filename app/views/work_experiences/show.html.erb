@@ -1,0 +1,22 @@
+<h1>Détails de l'expérience professionnelle</h1>
+
+<dl>
+  <dt>Titre :</dt>
+  <dd><%= @work_experience.title %></dd>
+
+  <dt>Entreprise :</dt>
+  <dd><%= @work_experience.company %></dd>
+
+  <dt>Description :</dt>
+  <dd><%= @work_experience.description %></dd>
+
+  <dt>Date de début :</dt>
+  <dd><%= @work_experience.start_date %></dd>
+
+  <dt>Date de fin :</dt>
+  <dd><%= @work_experience.end_date %></dd>
+</dl>
+
+<%= link_to "Modifier", edit_work_experience_path(@work_experience) %> |
+<%= link_to "Supprimer", @work_experience, method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cette expérience professionnelle ?" } %> |
+<%= link_to "Retour à la liste des expériences professionnelles", work_experiences_path %>
