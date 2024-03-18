@@ -10,6 +10,16 @@
     <%= javascript_importmap_tags %>
   </head>
 
+  <nav>
+  <ul>
+    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "Skills", skills_path %></li>
+    <li><%= link_to "Work Experiences", work_experiences_path %></li>
+    <li><%= link_to "Degrees", degrees_path %></li>
+    <li><%= link_to "Contact", new_contact_path %></li>
+  </ul>
+</nav>
+
   <body>
     <%= yield %>
   </body>

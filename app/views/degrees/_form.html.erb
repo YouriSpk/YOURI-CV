@@ -1,0 +1,27 @@
+<%= simple_form_for(@degree, html: { class: 'degree-form' }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="field">
+    <%= f.label :institution, "Institution" %>
+    <%= f.text_field :institution %>
+  </div>
+
+  <div class="field">
+    <%= f.label :degree, "Diplôme" %>
+    <%= f.text_field :degree %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_date, "Date de début" %>
+    <%= f.date_field :start_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_date, "Date de fin" %>
+    <%= f.date_field :end_date %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

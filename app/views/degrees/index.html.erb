@@ -1,0 +1,19 @@
+<h1>Liste des diplômes</h1>
+
+<% if @degrees.any? %>
+  <ul>
+    <% @degrees.each do |degree| %>
+      <li>
+        <%= link_to degree.degree, degree_path(degree) %>
+        <br>
+        <%= degree.institution %>
+        <br>
+        <%= degree.start_date %> - <%= degree.end_date %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Aucun diplôme trouvé.</p>
+<% end %>
+
+<%= link_to "Ajouter un nouveau diplôme", new_degree_path %>
