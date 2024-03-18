@@ -1,9 +1,14 @@
 <html>
-<head>
-  <title>Liste des compétences</title>
-</head>
-<body>
-  <h1>Liste des compétences</h1>
-  <!-- Afficher la liste des compétences ici -->
-</body>
+  <head>
+    <title>Liste des compétences</title>
+  </head>
+  <body>
+    <h1>Liste des compétences</h1>
+    <!-- Afficher la liste des compétences ici -->
+      <ul>
+      <% @skills.each do |skill| %>
+        <li><%= skill.name %></li>
+      <% end %>
+    </ul>
+  </body>
 </html>

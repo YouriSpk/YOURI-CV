@@ -8,6 +8,7 @@ class DegreesController < ApplicationController
 
   # GET /degrees/1
   def show
+    @degree = Degree.find(params[:id])
   end
 
   # GET /degrees/new
@@ -17,6 +18,7 @@ class DegreesController < ApplicationController
 
   # GET /degrees/1/edit
   def edit
+    @degree = Degree.find(params[:id])
   end
 
   # POST /degrees

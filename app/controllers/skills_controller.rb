@@ -9,6 +9,7 @@ class SkillsController < ApplicationController
 
   # GET /skills/1
   def show
+    @skill = Skill.find(params[:id])
   end
 
   # GET /skills/new
@@ -18,6 +19,7 @@ class SkillsController < ApplicationController
 
   # GET /skills/1/edit
   def edit
+    @skill = Skill.find(params[:id])
   end
 
   # POST /skills

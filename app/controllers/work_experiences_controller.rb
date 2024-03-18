@@ -8,6 +8,7 @@ class WorkExperiencesController < ApplicationController
 
   # GET /work_experiences/1
   def show
+    @work_experience = WorkExperience.find(params[:id])
   end
 
   # GET /work_experiences/new
@@ -17,6 +18,7 @@ class WorkExperiencesController < ApplicationController
 
   # GET /work_experiences/1/edit
   def edit
+    @work_experience = WorkExperience.find(params[:id])
   end
 
   # POST /work_experiences
