@@ -1,0 +1,19 @@
+<%= simple_form_for(@skill, html: { class: 'skill-form' }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="field">
+    <%= f.input :name %>
+  </div>
+
+  <div class="field">
+    <%= f.input :level, collection: ['beginner', 'intermediate', 'advanced', 'expert'] %>
+  </div>
+
+  <div class="field">
+    <%= f.input :section, collection: ['Soft', 'Hard'] %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
