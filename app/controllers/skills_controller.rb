@@ -1,5 +1,6 @@
 # app/controllers/skills_controller.rb
 class SkillsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_skill, only: [:show, :edit, :update, :destroy]
 
   # GET /skills

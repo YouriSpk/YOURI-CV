@@ -1,4 +1,5 @@
 class WorkExperiencesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_work_experience, only: [:show, :edit, :update, :destroy]
 
   # GET /work_experiences
