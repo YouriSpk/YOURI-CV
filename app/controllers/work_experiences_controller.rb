@@ -44,7 +44,7 @@ class WorkExperiencesController < ApplicationController
   # DELETE /work_experiences/1
   def destroy
     @work_experience.destroy
-    redirect_to work_experiences_url, notice: 'Work experience was successfully destroyed.'
+    redirect_to work_experiences_path, status: see_other
   end
 
   private

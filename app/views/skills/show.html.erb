@@ -5,4 +5,5 @@
 <p><strong>Section :</strong> <%= @skill.section %></p>
 
 <%= link_to 'Modify', edit_skill_path(@skill) %> |
+<%= link_to "Supprimer", skill_path(@skill), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer ce diplôme ?" }, "turbo-frame": "_top" %>
 <%= link_to 'Back', skills_path %>

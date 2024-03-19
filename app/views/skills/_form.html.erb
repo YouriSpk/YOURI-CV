@@ -6,11 +6,13 @@
   </div>
 
   <div class="field">
-    <%= f.input :level, collection: ['beginner', 'intermediate', 'advanced', 'expert'] %>
+    <%= f.label :level %>
+    <%= f.collection_select :level, ['beginner', 'intermediate', 'advanced', 'expert'], :itself, :capitalize, {}, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.input :section, collection: ['soft', 'hard'] %>
+    <%= f.label :section %>
+    <%= f.collection_select :section, ['soft', 'hard'], :itself, :capitalize, {}, class: 'form-control' %>
   </div>
 
   <div class="actions">

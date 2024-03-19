@@ -44,6 +44,7 @@ class SkillsController < ApplicationController
 
   # DELETE /skills/1
   def destroy
+    @skill = Skill.find(params[:id])
     @skill.destroy
     redirect_to skills_url, notice: 'Skill was successfully destroyed.'
   end
