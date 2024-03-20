@@ -1,0 +1,46 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  color: #122293;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card {
+  border: solid 2px #122293;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+
+.card-title a {
+  color: #122293;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn {
+  background-color: #122293;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: #0a1457;
+}

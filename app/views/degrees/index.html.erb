@@ -1,19 +1,28 @@
-<h1>Liste des diplômes</h1>
+<body>
+  <div class="container">
+    <h1>DEGREES</h1>
 
-<% if @degrees.any? %>
-  <ul>
-    <% @degrees.each do |degree| %>
-      <li>
-        <%= link_to degree.degree, degree_path(degree) %>
-        <br>
-        <%= degree.institution %>
-        <br>
-        <%= degree.start_date %> - <%= degree.end_date %>
-      </li>
+    <% if @degrees.any? %>
+      <div class="row">
+        <% @degrees.each do |degree| %>
+          <div class="col-md-12 mb-4">
+            <div class="card text-center">
+              <div class="card-body">
+                <div class="skill-details">
+                  <h5 class="card-title"><%= degree.degree %></h5>
+                  <p><%= degree.institution %></p>
+                  <p><%= degree.start_date %> - <%= degree.end_date %></p>
+                  <%= link_to "Details", degree, class: "btn btn-primary" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p>Aucun diplôme trouvé.</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>Aucun diplôme trouvé.</p>
-<% end %>
 
-<%= link_to "Ajouter un nouveau diplôme", new_degree_path %>
+    <%= link_to "Ajouter un nouveau diplôme", new_degree_path, class: "btn btn-primary" %>
+  </div>
+</body>

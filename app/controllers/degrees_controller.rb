@@ -4,7 +4,7 @@ class DegreesController < ApplicationController
 
   # GET /degrees
   def index
-    @degrees = Degree.all
+    @degrees = Degree.order(end_date: :desc)
   end
 
   # GET /degrees/1

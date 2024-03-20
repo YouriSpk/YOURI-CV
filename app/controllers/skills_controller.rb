@@ -57,6 +57,6 @@ class SkillsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def skill_params
-      params.require(:skill).permit(:name, :level, :section)
+      params.require(:skill).permit(:name, :level, :section, :icon) # Ajoutez :icon aux paramètres autorisés
     end
 end

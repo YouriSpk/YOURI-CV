@@ -1,19 +1,23 @@
-<h1>WORK EXPERIENCES</h1>
-
-<% if @work_experiences.any? %>
-  <ul>
-    <% @work_experiences.each do |experience| %>
-      <li>
-        <%= link_to experience.title, work_experience_path(experience) %>
-        <br>
-        <%= experience.company %>
-        <br>
-        <%= experience.start_date %> - <%= experience.end_date %>
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>Aucune expérience professionnelle trouvée.</p>
-<% end %>
-
-<%= link_to "Add a new work experience", new_work_experience_path %>
+<body>
+  <div class="container">
+    <h1>WORK EXPERIENCES</h1>
+    <div class="row">
+      <% @work_experiences.each do |experience| %>
+        <div class="col-md-12 mb-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <div class="skill-details">
+                <h5 class="card-title"><%= experience.title %></h5>
+                <p><%= experience.company %></p>
+                <p><%= experience.start_date %></p>
+                <p><%= experience.end_date %></p>
+                <%= link_to "Details", experience, class: "btn btn-primary" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to "Ajouter une nouvelle expérience", new_work_experience_path, class: "btn btn-primary" %>
+  </div>
+</body>

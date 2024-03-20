@@ -1,4 +1,6 @@
-<%= simple_form_for(@skill, html: { class: 'skill-form' }) do |f| %>
+<!-- skills/edit.html.erb -->
+
+<%= simple_form_for(@skill, html: { class: 'skill-form', multipart: true }) do |f| %>
   <%= f.error_notification %>
 
   <div class="field">
@@ -13,6 +15,12 @@
   <div class="field">
     <%= f.label :section %>
     <%= f.collection_select :section, ['soft', 'hard'], :itself, :capitalize, {}, class: 'form-control' %>
+  </div>
+
+  <!-- Champ pour l'icône -->
+  <div class="field">
+    <%= f.label :icon %>
+    <%= f.file_field :icon, class: 'form-control' %>
   </div>
 
   <div class="actions">

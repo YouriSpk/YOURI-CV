@@ -4,7 +4,7 @@ class WorkExperiencesController < ApplicationController
 
   # GET /work_experiences
   def index
-    @work_experiences = WorkExperience.all
+    @work_experiences = WorkExperience.order(end_date: :desc)
   end
 
   # GET /work_experiences/1
