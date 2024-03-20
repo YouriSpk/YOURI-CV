@@ -12,39 +12,37 @@
   </head>
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
-      <%= link_to "Home", root_path, class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Skills", skills_path, class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Work Experiences", work_experiences_path, class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Degrees", degrees_path, class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Contact", new_contact_path, class: "nav-link" %>
-    </li>
-    <ul class="navbar-nav">
+  <nav class="navbar">
+  <label>
+    <input type="checkbox">
+    <span class="menu">
+      <span class="hamburger"></span>
+    </span>
+    <ul class="mt-4">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Skills", skills_path %></li>
+      <li><%= link_to "Work Experiences", work_experiences_path %></li>
+      <li><%= link_to "Degrees", degrees_path %></li>
+      <li><%= link_to "Contact", new_contact_path %></li>
+      <li>
         <% if user_signed_in? %>
-          <li class="nav-item">
-        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-          </li>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path %>
-          </li>
+          <%= link_to "Login", new_user_session_path %>
         <% end %>
-      </ul>
-  </ul>
-
+      </li>
+    </ul>
+  </label>
 </nav>
 
   <body>
     <%= yield %>
   </body>
+
+  <footer class="sticky-bottom">
+  <div class="container">
+    <p>© 2024 Youri Soposki Tous droits réservés.</p>
+  </div>
+</footer>
+
 </html>
