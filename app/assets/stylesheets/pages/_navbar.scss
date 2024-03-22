@@ -14,7 +14,7 @@ body {
   font-family: "Cutive Mono", serif;
   font-size: 1.2em;
   line-height: 1.6;
-  background: #CCC;
+  background: #282828;
   overflow-x: hidden;
 }
 
@@ -26,10 +26,10 @@ label {
     z-index: 100;
     width: 200px;
     height: 200px;
-    background: #FFF;
+    background: #6C0093;
     border-radius: 50% 50% 50% 50%;
     transition: .5s ease-in-out;
-    box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
+    box-shadow: 0 0 0 0 #6c0093, 0 0 0 0 #6c0093;
     cursor: pointer;
   }
   .hamburger {
@@ -63,7 +63,7 @@ label {
     display: none;
   }
   input:checked + .menu {
-    box-shadow: 0 0 0 100vw #FFF, 0 0 0 100vh #FFF;
+    box-shadow: 0 0 0 100vw #6c0093, 0 0 0 100vh #6c0093;
     border-radius: 0;
     .hamburger {
       transform: rotate(45deg);
