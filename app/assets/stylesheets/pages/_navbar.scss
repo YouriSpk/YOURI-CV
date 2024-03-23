@@ -109,3 +109,15 @@ label {
   width: 80%;
   text-align: center;
 } */
+
+body {
+  padding-top: 60px; /* Ajustez cette valeur en fonction de la hauteur de votre barre de navigation */
+}
+
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Assurez-vous que le z-index est supérieur à celui des autres éléments pour qu'il apparaisse au-dessus */
+}

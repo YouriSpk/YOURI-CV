@@ -6,38 +6,31 @@
   </div>
 
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-body">
-            <% if @degrees.any? %>
-              <% @degrees.each do |degree| %>
-                <div class="card text-center mb-4">
-                  <div class="card-body">
-                    <div class="skill-details">
-                      <h5 class="card-title"><%= degree.degree %></h5>
-                      <p><%= degree.institution %></p>
-                      <p><%= degree.start_date %> - <%= degree.end_date %></p>
-                      <%= link_to "Details", degree, class: "btn btn-primary" %>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            <% else %>
-              <p class="text-center">Aucun diplôme trouvé.</p>
-            <% end %>
-
-            <div class="btn-group d-flex justify-content-center mt-3">
-              <%= link_to "Ajouter un nouveau diplôme", new_degree_path, class: "btn btn-primary" %>
+    <% @degrees.each do |degree| %>
+      <div class="row mb-4">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="skill-details">
+                <h5 class="card-title"><%= degree.degree %></h5>
+                <p><%= degree.institution %></p>
+                <p><%= degree.start_date %> - <%= degree.end_date %></p>
+                <%= link_to "Details", degree, class: "btn btn-primary" %>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    <% end %>
+    <div class="btn-group d-flex justify-content-center mt-3">
+      <%= link_to "Add a new degree", new_degree_path, class: "btn btn-primary" %>
     </div>
   </div>
+
 </body>
 
 <style>
+
   .banner {
     overflow: hidden;
     position: relative;
@@ -53,5 +46,6 @@
 
   h1.position-absolute {
     z-index: 1;
+    font-family: "Cutive Mono", serif !important;
   }
 </style>
