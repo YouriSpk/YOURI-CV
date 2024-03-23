@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .background-container {
-  background-image: url('https://images.unsplash.com/photo-1614853036361-59adb968ac4a?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Remplacez 'image_name.jpg' par le nom de votre image */
+  background-image: url('https://plus.unsplash.com/premium_photo-1682372665112-799f99a92454?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Remplacez 'image_name.jpg' par le nom de votre image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -9,11 +9,11 @@
 
 .title-cv {
   color: white; /* Couleur du texte */
-  text-shadow:
-    -2px -2px 0 #707070,
-    2px -2px 0 #707070,
-    -2px 2px 0 #707070,
-    2px 2px 0 #707070; /* Contours gris */
+  // text-shadow:
+  //   -2px -2px 0 #707070,
+  //   2px -2px 0 #707070,
+  //   -2px 2px 0 #707070,
+  //   2px 2px 0 #707070; /* Contours gris */
   font-size: 70px;
-  font-weight: bolder;
+  font-family: "Cutive Mono", serif;
 }

@@ -1,28 +1,57 @@
 <body>
-  <div class="container">
-    <h1>DEGREES</h1>
+  <!-- Bannière avec superposition du h1 -->
+  <div class="banner position-relative mb-4">
+    <img src="https://images.unsplash.com/photo-1579547621869-0ddb5f237392?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="degree banner">
+    <h1 class="text-white position-absolute bottom-0 start-50 translate-middle-x mb-4">DEGREES</h1>
+  </div>
 
-    <% if @degrees.any? %>
-      <div class="row">
-        <% @degrees.each do |degree| %>
-          <div class="col-md-12 mb-4">
-            <div class="card text-center">
-              <div class="card-body">
-                <div class="skill-details">
-                  <h5 class="card-title"><%= degree.degree %></h5>
-                  <p><%= degree.institution %></p>
-                  <p><%= degree.start_date %> - <%= degree.end_date %></p>
-                  <%= link_to "Details", degree, class: "btn btn-primary" %>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <% if @degrees.any? %>
+              <% @degrees.each do |degree| %>
+                <div class="card text-center mb-4">
+                  <div class="card-body">
+                    <div class="skill-details">
+                      <h5 class="card-title"><%= degree.degree %></h5>
+                      <p><%= degree.institution %></p>
+                      <p><%= degree.start_date %> - <%= degree.end_date %></p>
+                      <%= link_to "Details", degree, class: "btn btn-primary" %>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              <% end %>
+            <% else %>
+              <p class="text-center">Aucun diplôme trouvé.</p>
+            <% end %>
+
+            <div class="btn-group d-flex justify-content-center mt-3">
+              <%= link_to "Ajouter un nouveau diplôme", new_degree_path, class: "btn btn-primary" %>
             </div>
           </div>
-        <% end %>
+        </div>
       </div>
-    <% else %>
-      <p>Aucun diplôme trouvé.</p>
-    <% end %>
-
-    <%= link_to "Ajouter un nouveau diplôme", new_degree_path, class: "btn btn-primary" %>
+    </div>
   </div>
 </body>
+
+<style>
+  .banner {
+    overflow: hidden;
+    position: relative;
+    height: 300px; /* Hauteur de la bannière */
+    width: 100%; /* Largeur de la bannière */
+  }
+
+  .banner img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  h1.position-absolute {
+    z-index: 1;
+  }
+</style>

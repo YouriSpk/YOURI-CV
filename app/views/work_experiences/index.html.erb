@@ -1,6 +1,12 @@
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
 <body>
+  <!-- Bannière avec superposition du h1 -->
+  <div class="banner position-relative d-flex justify-content-center align-items-center mb-4">
+    <img src="https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="work experiences banner">
+    <h1 class="text-white position-absolute bottom-0 start-50 translate-middle-x mb-4">WORK EXPERIENCES</h1>
+  </div>
+
   <div class="container">
-    <h1>WORK EXPERIENCES</h1>
     <div class="row">
       <% @work_experiences.each do |experience| %>
         <div class="col-md-12 mb-4">
@@ -21,3 +27,22 @@
     <%= link_to "Ajouter une nouvelle expérience", new_work_experience_path, class: "btn btn-primary" %>
   </div>
 </body>
+
+<style>
+  .banner {
+    overflow: hidden;
+    position: relative;
+    height: 300px; /* Hauteur de la bannière */
+    width: 100%; /* Largeur de la bannière */
+  }
+
+  .banner img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  h1.position-absolute {
+    z-index: 1;
+  }
+</style>

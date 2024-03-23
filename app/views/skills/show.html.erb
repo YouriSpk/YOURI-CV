@@ -1,9 +1,64 @@
-<h1>Skill details</h1>
+<style>
+      .skill-icon img {
+        width: 60px; /* Ajustez la taille de l'icône selon vos besoins */
+        height: 60px; /* Ajustez la taille de l'icône selon vos besoins */
+      }
+</style>
+<body>
+  <!-- Bannière avec superposition du h1 -->
+  <div class="banner position-relative">
+    <img src="https://images.unsplash.com/photo-1614850715649-1d0106293bd1?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="skills banner">
+    <h1 class="text-white position-absolute bottom-0 start-50 translate-middle-x mb-4 text-center">SKILLS DETAILS</h1>
+  </div>
 
-<p><strong>Name :</strong> <%= @skill.name %></p>
-<p><strong>Level :</strong> <%= @skill.level %></p>
-<p><strong>Section :</strong> <%= @skill.section %></p>
+  <div class="container d-flex justify-content-center align-items-center flex-column mt-5 no-padding">
 
-<%= link_to 'Modify', edit_skill_path(@skill) %> |
-<%= link_to "Supprimer", skill_path(@skill), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer ce diplôme ?" }, "turbo-frame": "_top" %>
-<%= link_to 'Back', skills_path %>
+    <div class="card w-75">
+      <div class="card-body">
+        <div class="skill-details">
+          <!-- Afficher l'icône de compétence depuis Cloudinary si elle existe -->
+          <% if @skill.icon.attached? %>
+            <div class="skill-icon text-center mb-4">
+              <%= image_tag @skill.icon %> <!-- Utilisez la méthode image_tag pour afficher l'image -->
+            </div>
+          <% end %>
+          <div class="text-center mb-4">
+            <p><strong>Name :</strong> <%= @skill.name %></p>
+            <p><strong>Level :</strong> <%= @skill.level %></p>
+            <p><strong>Section :</strong> <%= @skill.section %></p>
+            <p><strong>Description : </strong><%= @skill.description %></p>
+          </div>
+          <div class="flex justify-content-between text-center">
+              <%= link_to 'Modify', edit_skill_path(@skill), class: "btn btn-primary btn-sm mr-2" %>
+              <%= link_to "Supprimer", skill_path(@skill), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer ce skill ?" }, class: "btn btn-danger btn-sm mr-2", "turbo-frame": "_top" %>
+              <%= link_to 'Back', skills_path, class: "btn btn-secondary btn-sm" %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<style>
+  .banner {
+    overflow: hidden;
+    position: relative;
+    height: 300px; /* Hauteur de la bannière */
+    width: 100%; /* Largeur de la bannière */
+  }
+
+  .banner img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  h1.position-absolute {
+    z-index: 1;
+  }
+
+  .no-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+</style>
