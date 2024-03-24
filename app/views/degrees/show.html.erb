@@ -42,7 +42,7 @@
   .banner {
     overflow: hidden;
     position: relative;
-    height: 300px; /* Hauteur de la bannière */
+    height: 400px; /* Hauteur de la bannière */
     width: 100%; /* Largeur de la bannière */
   }
 
@@ -52,8 +52,14 @@
     width: 100%;
   }
 
-  h1.position-absolute {
-    z-index: 1;
-    font-family: "Cutive Mono", serif !important
+  .banner h1 {
+      position: absolute;
+      top: 50%; /* Centrage vertical */
+      left: 50%; /* Centrage horizontal */
+      transform: translate(-50%, -50%); /* Ajustement pour centrer parfaitement */
+      z-index: 1;
+      color: white;
+      font-family: "Cutive Mono", serif;
+      font-size: 70px;
   }
 </style>

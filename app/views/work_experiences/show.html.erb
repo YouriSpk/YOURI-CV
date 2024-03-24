@@ -1,7 +1,7 @@
 <body>
   <!-- Bannière avec superposition du h1 -->
   <div class="banner position-relative d-flex justify-content-center align-items-center mb-4">
-    <img src="https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="work experience banner">
+    <img src="https://images.unsplash.com/photo-1614854262204-ac42b8c25c0e?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="work experience banner">
     <h1 class="text-white position-absolute bottom-0 start-50 translate-middle-x mb-4">WORK DETAILS</h1>
   </div>
 
@@ -39,7 +39,7 @@
   .banner {
     overflow: hidden;
     position: relative;
-    height: 300px; /* Hauteur de la bannière */
+    height: 400px; /* Hauteur de la bannière */
     width: 100%; /* Largeur de la bannière */
   }
 
@@ -49,8 +49,14 @@
     width: 100%;
   }
 
-  h1.position-absolute {
-    z-index: 1;
-    font-family: "Cutive Mono", serif !important;
+  .banner h1 {
+      position: absolute;
+      top: 50%; /* Centrage vertical */
+      left: 50%; /* Centrage horizontal */
+      transform: translate(-50%, -50%); /* Ajustement pour centrer parfaitement */
+      z-index: 1;
+      color: white;
+      font-family: "Cutive Mono", serif;
+      font-size: 70px;
   }
 </style>
