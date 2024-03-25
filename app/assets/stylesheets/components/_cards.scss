@@ -17,7 +17,7 @@ h1 {
 }
 
 .card {
-  border: solid 2px #122293;
+  border: solid 0px;
   border-radius: 5px;
   margin-bottom: 20px;
   background-color: transparent;
@@ -47,3 +47,9 @@ h1 {
 .btn:hover {
   background-color: #0a1457;
 }
+
+.skill-card {
+  width: 180px;
+  margin: 0 10px; /* Ajoute une marge autour de chaque carte pour l'espace */
+}
+

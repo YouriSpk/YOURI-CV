@@ -4,24 +4,28 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
 }
 
-.title-cv {
-  color: white; /* Couleur du texte */
-  // text-shadow:
-  //   -2px -2px 0 #707070,
-  //   2px -2px 0 #707070,
-  //   -2px 2px 0 #707070,
-  //   2px 2px 0 #707070; /* Contours gris */
+.home {
+  color: black; /* Couleur du texte */
   font-size: 70px;
   font-family: "Cutive Mono", serif;
 }
 
+.CV {
+  color: black; /* Couleur du texte */
+  font-size: 40px;
+}
+
 #bio {
   font-size: 14px;
+  font-weight: bold;
 }
 
 #job {
   font-size: 20px;
+}
+
+#card-home {
+  border: none; /* Supprime la bordure de la carte */
 }
