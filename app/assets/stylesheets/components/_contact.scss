@@ -33,14 +33,14 @@ textarea {
 #container-form {
   border: solid 3px #122293;
   margin: 0 auto;
-  max-width: 650px;
-  max-height: 650px;
+  max-width: 450px;  /* Ajustez la largeur maximale */
+  max-height: 550px; /* Ajustez la hauteur maximale */
   position: relative;
   width: 100%;
 }
 
 form {
-  padding: 45px;
+  padding: 25px; /* Réduisez le padding */
 }
 
 h2 {
@@ -61,10 +61,10 @@ input[type='text'], [type='email'], select, textarea {
   border: none;
   border-bottom: solid 2px #FFF; /* Changer la couleur de la bordure en blanc */
   color: #FFF;
-  font-size: 1.000em;
+  font-size: 0.9em; /* Ajustez la taille de la police */
   font-weight: 400;
   letter-spacing: 1px;
-  margin: 0em 0 1.875em 0;
+  margin: 0.5em 0; /* Réduisez les marges */
   padding: 0 0 0.875em 0;
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -124,10 +124,10 @@ textarea {
   cursor: pointer;
   display: inline-block;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 12px; /* Réduisez la taille de la police */
   font-weight: bold;
   outline: none;
-  padding: 20px 35px;
+  padding: 15px 25px; /* Réduisez le padding */
   text-transform: uppercase;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
