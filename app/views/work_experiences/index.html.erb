@@ -18,7 +18,7 @@
                 <p>@<%= experience.company %></p>
                 <p>From <%= experience.start_date.strftime('%d %B %Y') %></p>
                 <p>To <%= experience.end_date ? experience.end_date.strftime('%d %B %Y') : 'Présent' %></p>
-                <%= link_to "Details", experience, class: "btn btn-primary" %>
+                <%= link_to "Details", experience, class: "btn" %>
               </div>
             </div>
           </div>
@@ -26,7 +26,9 @@
       <% end %>
     </div>
 
-    <%= link_to "Ajouter une nouvelle expérience", new_work_experience_path, class: "btn btn-primary" %>
+    <% if user_signed_in? %>
+      <%= link_to "Add", new_work_experience_path, class: "btn" %>
+    <% end %>
   </div>
 </body>
 

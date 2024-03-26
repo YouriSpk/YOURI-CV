@@ -60,13 +60,13 @@
               <% end %>
               <div class="card-body text-center">
                 <h4 class="card-title"><%= link_to skill.name, skill %></h4>
-                <%= link_to "See details", skill, class: "btn btn-primary" %>
+                <%= link_to "See details", skill, class: "btn" %>
               </div>
             </div>
           </div>
         <% end %>
       </div>
-      <%= link_to "Add a new skill", new_skill_path, class: "btn btn-primary" %>
+      <%= link_to "Add", new_skill_path, class: "btn" %>
     </div>
   </body>
 </html>

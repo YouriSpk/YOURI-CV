@@ -24,7 +24,7 @@ h1 {
 }
 
 .card-title a {
-  color: #122293;
+  color: black;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -32,7 +32,7 @@ h1 {
 }
 
 .btn {
-  background-color: #122293;
+  background-color: white;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -45,11 +45,11 @@ h1 {
 }
 
 .btn:hover {
-  background-color: #0a1457;
+  background-color: black;
+  color: white;
 }
 
 .skill-card {
   width: 180px;
   margin: 0 10px; /* Ajoute une marge autour de chaque carte pour l'espace */
 }
-

@@ -26,9 +26,11 @@
         </dl>
 
         <div class="text-center mt-3">
-          <%= link_to "Modifier", edit_work_experience_path(@work_experience), class: "btn btn-primary btn-sm mr-2" %>
-          <%= link_to "Supprimer", @work_experience, method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cette expérience professionnelle ?" }, class: "btn btn-danger btn-sm mr-2" %>
-          <%= link_to "Retour à la liste des expériences professionnelles", work_experiences_path, class: "btn btn-secondary btn-sm" %>
+          <% if user_signed_in? %>
+            <%= link_to "Edit", edit_work_experience_path(@work_experience), class: "btn btn-primary btn-sm mr-2" %>
+            <%= link_to "Delete", @work_experience, method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cette expérience professionnelle ?" }, class: "btn btn-danger btn-sm mr-2" %>
+          <% end %>
+          <%= link_to "Back", work_experiences_path, class: "btn btn-secondary btn-sm" %>
         </div>
       </div>
     </div>

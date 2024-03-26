@@ -15,16 +15,18 @@
                 <h5 class="card-title"><%= degree.degree %></h5>
                 <p>@<%= degree.institution %></p>
                 <p><%= degree.start_date.strftime('%d %B %Y') %> to <%= degree.end_date ? degree.end_date.strftime('%d %B %Y') : 'Présent' %></p>
-                <%= link_to "Details", degree, class: "btn btn-primary" %>
+                <%= link_to "Details", degree, class: "btn" %>
               </div>
             </div>
           </div>
         </div>
       </div>
     <% end %>
+    <% if user_signed_in? %> <!-- Vérifie si un utilisateur est connecté -->
     <div class="btn-group d-flex justify-content-center mt-3">
-      <%= link_to "Add a new degree", new_degree_path, class: "btn btn-primary" %>
+      <%= link_to "Add", new_degree_path, class: "btn" %>
     </div>
+    <% end %>
   </div>
 </body>
 

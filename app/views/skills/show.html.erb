@@ -29,9 +29,11 @@
             <p><strong>Description : </strong><%= @skill.description %></p>
           </div>
           <div class="flex justify-content-between text-center">
-              <%= link_to 'Modify', edit_skill_path(@skill), class: "btn btn-primary btn-sm mr-2" %>
-              <%= link_to "Supprimer", skill_path(@skill), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer ce skill ?" }, class: "btn btn-danger btn-sm mr-2", "turbo-frame": "_top" %>
-              <%= link_to 'Back', skills_path, class: "btn btn-secondary btn-sm" %>
+            <% if user_signed_in? %>
+              <%= link_to 'Edit', edit_skill_path(@skill), class: "btn btn-sm mr-2" %>
+              <%= link_to "Delete", skill_path(@skill), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer ce skill ?" }, class: "btn btn-sm mr-2", "turbo-frame": "_top" %>
+            <% end %>
+              <%= link_to 'Back', skills_path, class: "btn btn-sm" %>
             </div>
         </div>
       </div>
