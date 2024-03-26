@@ -13,8 +13,8 @@
         align-items: center;
       }
       .skill-icon img {
-        width: 40px; /* Ajustez la taille de l'icône selon vos besoins */
-        height: 40px; /* Ajustez la taille de l'icône selon vos besoins */
+        width: 150px; /* Ajustez la taille de l'icône selon vos besoins */
+        height: 150px; /* Ajustez la taille de l'icône selon vos besoins */
       }
       .banner {
         overflow: hidden;
@@ -52,18 +52,15 @@
       <div class="row">
         <% @skills.each do |skill| %>
           <div class="col-md-4 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <div class="skill-details">
-                  <h5 class="card-title"><%= link_to skill.name, skill %></h5>
-                  <%= link_to "See details", skill, class: "btn btn-primary" %>
+            <div class="card text-center" style="width:400px">
+              <% if skill.icon.attached? %>
+                <div class="card-img-top skill-icon" style="width:100%">
+                  <%= image_tag skill.icon %> <!-- Utilisez la méthode image_tag pour afficher l'image -->
                 </div>
-                <!-- Afficher l'icône de compétence depuis Cloudinary si elle existe -->
-                <% if skill.icon.attached? %>
-                  <div class="skill-icon">
-                    <%= image_tag skill.icon %> <!-- Utilisez la méthode image_tag pour afficher l'image -->
-                  </div>
-                <% end %>
+              <% end %>
+              <div class="card-body text-center">
+                <h4 class="card-title"><%= link_to skill.name, skill %></h4>
+                <%= link_to "See details", skill, class: "btn btn-primary" %>
               </div>
             </div>
           </div>

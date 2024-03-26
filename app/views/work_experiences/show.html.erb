@@ -19,10 +19,10 @@
           <dd><%= @work_experience.description %></dd>
 
           <dt>Date de début :</dt>
-          <dd><%= @work_experience.start_date %></dd>
+          <dd><%= @work_experience.start_date.strftime('%d %B %Y') %></dd>
 
           <dt>Date de fin :</dt>
-          <dd><%= @work_experience.end_date %></dd>
+          <dd><%= @work_experience.end_date ? @work_experience.end_date.strftime('%d %B %Y') : 'Présent' %></dd>
         </dl>
 
         <div class="text-center mt-3">
@@ -50,13 +50,13 @@
   }
 
   .banner h1 {
-      position: absolute;
-      top: 50%; /* Centrage vertical */
-      left: 50%; /* Centrage horizontal */
-      transform: translate(-50%, -50%); /* Ajustement pour centrer parfaitement */
-      z-index: 1;
-      color: white;
-      font-family: "Cutive Mono", serif;
-      font-size: 70px;
+    position: absolute;
+    top: 50%; /* Centrage vertical */
+    left: 50%; /* Centrage horizontal */
+    transform: translate(-50%, -50%); /* Ajustement pour centrer parfaitement */
+    z-index: 1;
+    color: white;
+    font-family: "Cutive Mono", serif;
+    font-size: 70px;
   }
 </style>

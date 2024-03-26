@@ -8,13 +8,13 @@
   <div class="container">
     <% @degrees.each do |degree| %>
       <div class="row mb-4">
-        <div class="col-md-12">
-          <div class="card">
+        <div class="col-12">
+          <div class="card text-center">
             <div class="card-body">
               <div class="skill-details">
                 <h5 class="card-title"><%= degree.degree %></h5>
-                <p><%= degree.institution %></p>
-                <p><%= degree.start_date %> - <%= degree.end_date %></p>
+                <p>@<%= degree.institution %></p>
+                <p><%= degree.start_date.strftime('%d %B %Y') %> to <%= degree.end_date ? degree.end_date.strftime('%d %B %Y') : 'Présent' %></p>
                 <%= link_to "Details", degree, class: "btn btn-primary" %>
               </div>
             </div>
@@ -26,11 +26,9 @@
       <%= link_to "Add a new degree", new_degree_path, class: "btn btn-primary" %>
     </div>
   </div>
-
 </body>
 
 <style>
-
   .banner {
     overflow: hidden;
     position: relative;
@@ -45,13 +43,13 @@
   }
 
   .banner h1 {
-      position: absolute;
-      top: 50%; /* Centrage vertical */
-      left: 50%; /* Centrage horizontal */
-      transform: translate(-50%, -50%); /* Ajustement pour centrer parfaitement */
-      z-index: 1;
-      color: white;
-      font-family: "Cutive Mono", serif;
-      font-size: 70px;
+    position: absolute;
+    top: 50%; /* Centrage vertical */
+    left: 50%; /* Centrage horizontal */
+    transform: translate(-50%, -50%); /* Ajustement pour centrer parfaitement */
+    z-index: 1;
+    color: white;
+    font-family: "Cutive Mono", serif;
+    font-size: 70px;
   }
 </style>

@@ -1,31 +1,28 @@
 <div class="contact" style="margin-top: 70px;">
   <div id="container-form">
-    <h2>contact</h2>
-    <form action="#" method="post" id="contact_form">
+    <h2>Contact</h2>
+    <%= simple_form_for @contact, url: contacts_path, method: :post, id: "contact_form" do |form| %>
+
       <div class="name">
-        <label for="name"></label>
-        <input type="text" placeholder="Name" name="name" id="name_input" required>
+        <%= form.input :name, label: false, required: true, placeholder: "Name", input_html: { id: "name_input" } %>
       </div>
+
       <div class="email">
-        <label for="email"></label>
-        <input type="email" placeholder="Email" name="email" id="email_input" required>
+        <%= form.input :email, label: false, required: true, placeholder: "Email", input_html: { id: "email_input" } %>
       </div>
+
       <div class="subject">
-        <label for="subject"></label>
-        <select name="subject" id="subject_input" required>
-          <option disabled hidden selected>Subject</option>
-          <option>Just sayin' "hi"!</option>
-          <option>Quick question.</option>
-          <option>How about a commission?</option>
-        </select>
+        <%= form.select :subject, ['Just sayin\' "hi"!', 'Quick question.', 'How about a commission?'], { prompt: 'Subject' }, required: true, input_html: { id: "subject_input" } %>
       </div>
+
       <div class="message">
-        <label for="message"></label>
-        <textarea name="message" placeholder="Message" id="message_input" cols="30" rows="5" required></textarea>
+        <%= form.text_area :message, label: false, required: true, placeholder: "Message", input_html: { id: "message_input", cols: 30, rows: 5 } %>
       </div>
+
       <div class="submit">
-        <input type="submit" value="Envoyer" id="form_button"/>
+        <%= form.submit "Envoyer", id: "form_button" %>
       </div>
-    </form>
+
+    <% end %>
   </div>
 </div>

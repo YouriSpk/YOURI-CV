@@ -14,7 +14,6 @@ body {
   font-family: "Cutive Mono", serif;
   font-size: 1.2em;
   line-height: 1.6;
-  background: #d6d2d2;
   overflow-x: hidden;
   margin-top: 70px; /* Ajout de cette marge pour décaler le contenu en dessous de la navbar */
 }
@@ -23,6 +22,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  background: #d6d2d2;
   width: 100%;
   z-index: 1000; /* Assurez-vous que le z-index est supérieur à celui des autres éléments pour qu'il apparaisse au-dessus */
 }

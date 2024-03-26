@@ -8,7 +8,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <div class="card">
+        <div class="card text-center">
           <div class="card-body">
             <h1 class="text-center mb-4"><%= @degree.degree %></h1>
 
@@ -19,11 +19,9 @@
               <dt>Diplôme:</dt>
               <dd><%= @degree.degree %></dd>
 
-              <dt>Date de début:</dt>
-              <dd><%= @degree.start_date %></dd>
-
-              <dt>Date de fin:</dt>
-              <dd><%= @degree.end_date %></dd>
+              <dt>From:</dt>
+              <dd class="d-inline-block mr-2"><%= @degree.start_date.strftime('%d %B %Y') %></dd>
+              <dd class="d-inline-block">to <%= @degree.end_date ? @degree.end_date.strftime('%d %B %Y') : 'Présent' %></dd>
             </dl>
 
             <div class="text-center mt-3">
@@ -53,13 +51,13 @@
   }
 
   .banner h1 {
-      position: absolute;
-      top: 50%; /* Centrage vertical */
-      left: 50%; /* Centrage horizontal */
-      transform: translate(-50%, -50%); /* Ajustement pour centrer parfaitement */
-      z-index: 1;
-      color: white;
-      font-family: "Cutive Mono", serif;
-      font-size: 70px;
+    position: absolute;
+    top: 50%; /* Centrage vertical */
+    left: 50%; /* Centrage horizontal */
+    transform: translate(-50%, -50%); /* Ajustement pour centrer parfaitement */
+    z-index: 1;
+    color: white;
+    font-family: "Cutive Mono", serif;
+    font-size: 70px;
   }
 </style>
