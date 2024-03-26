@@ -8,26 +8,32 @@
   </div>
 
   <div class="container">
-    <div class="row">
-      <% @work_experiences.each do |experience| %>
-        <div class="col-12">
-          <div class="card text-center">
-            <div class="card-body">
-              <div class="skill-details">
-                <h5 class="card-title"><%= experience.title %></h5>
-                <p>@<%= experience.company %></p>
-                <p>From <%= experience.start_date.strftime('%d %B %Y') %></p>
-                <p>To <%= experience.end_date ? experience.end_date.strftime('%d %B %Y') : 'Présent' %></p>
-                <%= link_to "Details", experience, class: "btn" %>
-              </div>
+  <div class="row">
+    <% @work_experiences.each do |experience| %>
+      <div class="col-12">
+        <div class="card text-center">
+          <div class="card-body">
+            <div class="skill-details">
+              <h5 class="card-title"><%= experience.title %></h5>
+              <p>@<%= experience.company %></p>
+              <p>
+                From
+                <span><%= experience.start_date.strftime('%d %B %Y') %></span>
+                to
+                <span><%= experience.end_date ? experience.end_date.strftime('%d %B %Y') : 'Présent' %></span>
+              </p>
+              <%= link_to "Details", experience, class: "btn" %>
             </div>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 
     <% if user_signed_in? %>
-      <%= link_to "Add", new_work_experience_path, class: "btn" %>
+      <%= link_to "Add +1", new_work_experience_path, class: "btn" %>
     <% end %>
   </div>
 </body>

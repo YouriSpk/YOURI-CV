@@ -8,22 +8,25 @@
   <div class="container d-flex justify-content-center align-items-center">
     <div class="card w-75">
       <div class="card-body text-center">
-        <dl>
-          <dt>Titre :</dt>
-          <dd><%= @work_experience.title %></dd>
+       <dl>
+  <dt>Titre :</dt>
+  <dd><%= @work_experience.title %></dd>
 
-          <dt>Entreprise :</dt>
-          <dd><%= @work_experience.company %></dd>
+  <dt>Entreprise :</dt>
+  <dd>@<%= @work_experience.company %></dd>
 
-          <dt>Description :</dt>
-          <dd><%= @work_experience.description %></dd>
+  <dt>Description :</dt>
+  <dd><%= @work_experience.description %></dd>
 
-          <dt>Date de début :</dt>
-          <dd><%= @work_experience.start_date.strftime('%d %B %Y') %></dd>
+  <dt>When :</dt>
+  <dd>
+    From
+    <span><%= @work_experience.start_date.strftime('%d %B %Y') %></span>
+    to
+    <span><%= @work_experience.end_date ? @work_experience.end_date.strftime('%d %B %Y') : 'Présent' %></span>
+  </dd>
+</dl>
 
-          <dt>Date de fin :</dt>
-          <dd><%= @work_experience.end_date ? @work_experience.end_date.strftime('%d %B %Y') : 'Présent' %></dd>
-        </dl>
 
         <div class="text-center mt-3">
           <% if user_signed_in? %>
