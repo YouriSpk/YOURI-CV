@@ -43,11 +43,17 @@ class SkillsController < ApplicationController
   end
 
   # DELETE /skills/1
-  def destroy
-    @skill = Skill.find(params[:id])
-    @skill.destroy
-    redirect_to skills_url, notice: 'Skill was successfully destroyed.'
+# DELETE /skills/1
+def destroy
+  @skill = Skill.find(params[:id])
+  @skill.destroy
+  respond_to do |format|
+    format.html { redirect_to skills_url, notice: 'Skill was successfully destroyed.' }
+    format.json { head :no_content }
   end
+end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

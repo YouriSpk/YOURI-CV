@@ -28,12 +28,14 @@
             <p><strong>Section :</strong> <%= @skill.section %></p>
             <p><strong>Description : </strong><%= @skill.description %></p>
           </div>
-          <div class="flex justify-content-between text-center">
+          <div class="text-center mt-3">
             <% if user_signed_in? %>
               <%= link_to 'Edit', edit_skill_path(@skill), class: "btn btn-sm mr-2" %>
-              <%= link_to "Delete", skill_path(@skill), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer ce skill ?" }, class: "btn btn-sm mr-2", "turbo-frame": "_top" %>
+              <%= turbo_frame_tag "skill_#{@skill.id}" do %>
+              <%= button_to "Delete", skill_path(@skill), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cette compétence ?" }, class: "btn btn-sm mr-2" %>
+              <% end %>
             <% end %>
-              <%= link_to 'Back', skills_path, class: "btn btn-sm" %>
+            <%= link_to 'Back', skills_path, class: "btn btn-sm" %>
             </div>
         </div>
       </div>

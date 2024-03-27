@@ -26,4 +26,6 @@
   <div class="actions">
     <%= f.submit class: "btn" %>
   </div>
+  <%= link_to 'Destroy', skill_path(skill), method: :delete, data: { confirm: 'Are you sure?' } %>
+
 <% end %>
