@@ -29,13 +29,13 @@
       </div>
     <% end %>
   </div>
+      <% if user_signed_in? %>
+      <%= link_to "Add +1", new_work_experience_path, class: "btn" %>
+    <% end %>
 </div>
 
 
-    <% if user_signed_in? %>
-      <%= link_to "Add +1", new_work_experience_path, class: "btn" %>
-    <% end %>
-  </div>
+
 </body>
 
 <style>
