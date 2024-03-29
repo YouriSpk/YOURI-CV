@@ -52,6 +52,7 @@ gem "sassc-rails"
 gem "cloudinary"
 gem "devise"
 gem 'mail_form'
+gem 'dalli'
 
 group :development, :test do
   gem "dotenv-rails"

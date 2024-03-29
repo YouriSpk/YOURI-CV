@@ -113,6 +113,7 @@ GEM
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
     crass (1.0.6)
+    dalli (3.2.8)
     date (3.3.4)
     debug (1.9.1)
       irb (~> 1.10)
@@ -312,6 +313,7 @@ DEPENDENCIES
   bootstrap (~> 5.2)
   capybara
   cloudinary
+  dalli
   debug
   devise
   dotenv-rails
