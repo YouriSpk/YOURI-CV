@@ -40,15 +40,9 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-  address: 'live.smtp.mailtrap.io',
-  port: 587,
-  domain: 'mailtrap.club',
-  user_name: ENV.fetch('MAILTRAP_SMTP_USER'),
-  password: ENV.fetch('MAILTRAP_SMTP_PASSWORD'),
-  authentication: 'plain',
-  enable_starttls_auto: true
+  config.action_mailer.delivery_method = :mailtrap
+config.action_mailer.mailtrap_settings = {
+  api_key: ENV.fetch('MAILTRAP_API_KEY')
 }
 
   # Print deprecation notices to the Rails logger.
