@@ -1,9 +1,37 @@
-<html>
-  <head>
-    <title>SKILLS</title>
-    <!-- Inclure Font Awesome CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <style>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+<body>
+    <!-- Bannière avec superposition du h1 -->
+    <div class="banner position-relative d-flex justify-content-center align-items-center mb-4">
+      <img src="https://images.unsplash.com/photo-1614849286521-4c58b2f0ff15?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="skills banner">
+      <h1 class="text-white position-absolute bottom-0 start-50 translate-middle-x mb-4">SKILLS</h1>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <% @skills.each do |skill| %>
+          <div class="col-md-4 mb-4">
+            <div class="card text-center" style="width:400px">
+              <% if skill.icon.attached? %>
+                <div class="card-img-top skill-icon" style="width:100%">
+                  <%= image_tag skill.icon %> <!-- Utilisez la méthode image_tag pour afficher l'image -->
+                </div>
+              <% end %>
+              <div class="card-body text-center">
+                <h4 class="card-title"><%= link_to skill.name, skill %></h4>
+                <%= link_to "See details", skill, class: "btn" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <% if user_signed_in? %>
+        <%= link_to "Add +1", new_skill_path, class: "btn" %>
+      <% end %>
+    </div>
+  </body>
+      <style>
       .title{
         font-family: "Cutive Mono", serif;
       }
@@ -39,36 +67,19 @@
         height: 100%;
         width: 100%;
       }
-    </style>
-  </head>
-<body>
-    <!-- Bannière avec superposition du h1 -->
-    <div class="banner position-relative d-flex justify-content-center align-items-center mb-4">
-      <img src="https://images.unsplash.com/photo-1614849286521-4c58b2f0ff15?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="skills banner">
-      <h1 class="text-white position-absolute bottom-0 start-50 translate-middle-x mb-4">SKILLS</h1>
-    </div>
 
-    <div class="container">
-      <div class="row">
-        <% @skills.each do |skill| %>
-          <div class="col-md-4 mb-4">
-            <div class="card text-center" style="width:400px">
-              <% if skill.icon.attached? %>
-                <div class="card-img-top skill-icon" style="width:100%">
-                  <%= image_tag skill.icon %> <!-- Utilisez la méthode image_tag pour afficher l'image -->
-                </div>
-              <% end %>
-              <div class="card-body text-center">
-                <h4 class="card-title"><%= link_to skill.name, skill %></h4>
-                <%= link_to "See details", skill, class: "btn" %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-      <% if user_signed_in? %>
-        <%= link_to "Add +1", new_skill_path, class: "btn" %>
-      <% end %>
-    </div>
-  </body>
-</html>
+      /* Pour les écrans de petite taille */
+@media (max-width: 768px) {
+
+
+  .skill-icon img {
+        width: 50px; /* Ajustez la taille de l'icône selon vos besoins */
+        height: 50px; /* Ajustez la taille de l'icône selon vos besoins */
+      }
+
+  .banner h1 {
+    font-size: 30px;
+  }
+}
+
+    </style>

@@ -10,6 +10,10 @@ html {
   font-size: 18px;
 }
 
+.nav-item:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
 body {
   font-family: "Cutive Mono", serif;
   font-size: 1.2em;
@@ -26,7 +30,31 @@ body {
   z-index: 1000; /* Assurez-vous que le z-index est supérieur à celui des autres éléments pour qu'il apparaisse au-dessus */
 }
 
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 7px; /* Marge entre chaque élément du menu */
+}
+
 .container {
   position: relative; /* Ajout de position relative */
   z-index: 1; /* Assurez-vous que le z-index est supérieur à celui de la navbar */
+}
+
+@media (max-width: 768px) {
+  .navbar-header {
+    margin-left: 15px; /* Ajoute un espace à gauche du logo */
+  }
+
+  .btn-log {
+    margin-right: 15px;
+  }
+  .navbar-toggler {
+    margin-right: 15px; /* Ajoute un espace à droite de l'icône du menu */
+  }
 }
