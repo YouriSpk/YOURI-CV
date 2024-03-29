@@ -22,5 +22,5 @@ Rails.application.routes.draw do
   resources :work_experiences
 
   # Routes for Contact model
-  resources :contacts, only: [:new, :create]
+  resources :contacts, only: %i[new create]
 end

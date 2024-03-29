@@ -14,7 +14,7 @@
               <div class="skill-details">
                 <h5 class="card-title"><b><%= degree.degree %></b></h5>
                 <p>@<%= degree.institution %></p>
-                <p>From<%= degree.start_date.strftime('%d %B %Y') %> to <%= degree.end_date ? degree.end_date.strftime('%d %B %Y') : 'Présent' %></p>
+                <p>From <%= degree.start_date.strftime('%d %B %Y') %> to <%= degree.end_date ? degree.end_date.strftime('%d %B %Y') : 'Présent' %></p>
                 <%= link_to "Details", degree, class: "btn" %>
               </div>
             </div>

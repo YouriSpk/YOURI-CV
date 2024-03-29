@@ -34,7 +34,7 @@ textarea {
   border: solid 3px #122293;
   margin: 0 auto;
   max-width: 450px;  /* Ajustez la largeur maximale */
-  max-height: 550px; /* Ajustez la hauteur maximale */
+  max-height: 700px; /* Ajustez la hauteur maximale */
   position: relative;
   width: 100%;
 }
@@ -102,10 +102,6 @@ select::-ms-expand {
   display: none;
 }
 
-.subject {
-  width: 100%;
-}
-
 textarea {
   line-height: 150%;
   height: 150px;
@@ -122,25 +118,28 @@ textarea {
   border: solid 2px #FFF;
   color: #FFF;
   cursor: pointer;
-  display: inline-block;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 12px; /* Réduisez la taille de la police */
+  display: block;
+  font-family: "Cutive Mono", sans-serif;
+  font-size: 12px;
   font-weight: bold;
   outline: none;
-  padding: 15px 25px; /* Réduisez le padding */
+  padding: 15px 25px;
   text-transform: uppercase;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-.submit {
-  text-align: center;
+  margin: 0 auto; /* Centre le bouton horizontalement */
+  height: auto; /* Ajustez selon vos besoins */
+  max-height: 550px; /* Ajustez la hauteur maximale */
+  overflow: auto; /* Ajoutez un défilement si le contenu dépasse */
+  position: relative;
 }
 
 #form_button:hover {
-  background: #122293;
+  background: black;
   color: #ffffff;
+  position: static;
+  margin: 20px auto;
 }

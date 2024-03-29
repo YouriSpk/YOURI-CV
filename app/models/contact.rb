@@ -1,9 +1,14 @@
-# app/models/contact.rb
-class Contact < ApplicationRecord
-  validates :name, presence: true
-  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :message, presence: true
+class Contact < MailForm::Base
+  attribute :name, validate: true
+  attribute :last_name, validate: true
+  attribute :email, validate: true
+  attribute :message
 
-  attr_accessor :subject
+ def headers
+    {
+      subject: "My Contact Form",
+      to: 'youri.soposki@gmail.com',
+      from: %("#{name} #{last_name}" <#{email}>)
+    }
+  end
 end
-

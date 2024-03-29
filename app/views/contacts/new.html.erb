@@ -1,28 +1,42 @@
 <div class="contact" style="margin-top: 70px;">
   <div id="container-form">
     <h2>Contact</h2>
-    <%= simple_form_for @contact, url: contacts_path, method: :post, id: "contact_form" do |form| %>
+    <%= form_with scope: :contact_form, url: contacts_path, method: :post, local: true, class: "container" do |form| %>
 
-      <div class="name">
-        <%= form.input :name, label: false, required: true, placeholder: "Name", input_html: { id: "name_input" } %>
+      <div class="form-group row">
+        <div class="col">
+          <%= form.label :name %>
+          <%= form.text_field :name, class: "form-control", id: "name_input", required: true %>
+        </div>
+
+        <div class="col">
+          <%= form.label :last_name %>
+          <%= form.text_field :last_name, class: "form-control", id: "last_name_input", required: true %>
+        </div>
       </div>
 
-      <div class="email">
-        <%= form.input :email, label: false, required: true, placeholder: "Email", input_html: { id: "email_input" } %>
+      <div class="form-group">
+        <%= form.label :email %>
+        <%= form.email_field :email, class: "form-control", id: "email_input", required: true %>
       </div>
 
-      <div class="subject">
-        <%= form.select :subject, ['Just sayin\' "hi"!', 'Quick question.', 'How about a commission?'], { prompt: 'Subject' }, required: true, input_html: { id: "subject_input" } %>
+      <div class="form-group">
+        <%= form.label :message %>
+        <%= form.text_area :message, class: "form-control", id: "message_input", required: true, rows: 5 %>
       </div>
 
-      <div class="message">
-        <%= form.text_area :message, label: false, required: true, placeholder: "Message", input_html: { id: "message_input", cols: 30, rows: 5 } %>
-      </div>
-
-      <div class="submit">
-        <%= form.submit "Envoyer", id: "form_button" %>
-      </div>
+      <%= form.submit "Submit", class: "btn", id: "form_button" %>
 
     <% end %>
   </div>
 </div>
+
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+    <%= flash[:notice] %>
+  </div>
+<% elsif flash[:alert] %>
+  <div class="alert alert-danger">
+    <%= flash[:alert] %>
+  </div>
+<% end %>

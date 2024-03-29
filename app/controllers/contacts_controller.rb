@@ -1,24 +1,13 @@
 class ContactsController < ApplicationController
-  # GET /contacts/new
-  def new
-    @contact = Contact.new
-  end
-
-  # POST /contacts
   def create
-    @contact = Contact.new(contact_params)
+    @name = params[:contact_form][:name]
+    @last_name = params[:contact_form][:last_name]
+    @email = params[:contact_form][:email]
+    @message = params[:contact_form][:message]
 
-    if @contact.valid?
-      ContactMailer.contact_email(@contact).deliver_now
-      redirect_to root_path, notice: 'Thank you for your message. We will contact you soon!'
-    else
-      render :new
-    end
-  end
-
-  private
-    # Only allow a list of trusted parameters through.
-    def contact_params
-      params.require(:contact).permit(:name, :email, :subject, :message)
-    end
+    # Perform any necessary actions with the form data
+    NotifierMailer.simple_message(@name, @last_name, @email, @message).deliver_now
+    flash[:notice] = "Your message has been sent successfully."
+    redirect_to :root
+end
 end
