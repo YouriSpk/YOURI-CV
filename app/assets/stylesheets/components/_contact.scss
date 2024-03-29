@@ -1,100 +1,68 @@
 html {
-  font-family: "Cutive Mono", serif !important;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  font-family: "Cutive Mono", serif;
 }
 
-.contact {
-  padding: 10px;
-}
-
-button {
-  overflow: visible;
-}
-
-button, select {
-  text-transform: none;
-}
-
-button, input, select, textarea {
-  color: #FFF; /* Changer la couleur du texte en blanc */
-  font: inherit;
-  margin: 0;
-}
-
-input {
-  line-height: normal;
-}
-
-textarea {
-  overflow: auto;
+.navbar {
+  margin-bottom: 20px;
 }
 
 #container-form {
-  border: solid 3px #122293;
-  margin: 0 auto;
-  max-width: 450px;  /* Ajustez la largeur maximale */
-  max-height: 700px; /* Ajustez la hauteur maximale */
-  position: relative;
-  width: 100%;
-}
-
-form {
-  padding: 25px; /* Réduisez le padding */
+  border: 1px solid black;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 15px;
 }
 
 h2 {
-  color: #122293;
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: 7px;
+  color: black;
+  font-size: 28px;
   text-align: center;
 }
 
-.email {
-  float: right;
-  width: 45%;
-}
-
-input[type='text'], [type='email'], select, textarea {
+input[type='text'],
+input[type='email'],
+select {
   background: none;
   border: none;
-  border-bottom: solid 2px #FFF; /* Changer la couleur de la bordure en blanc */
+  border-bottom: 1px solid #FFF;
   color: #FFF;
-  font-size: 0.9em; /* Ajustez la taille de la police */
-  font-weight: 400;
-  letter-spacing: 1px;
-  margin: 0.5em 0; /* Réduisez les marges */
-  padding: 0 0 0.875em 0;
+  font-size: 0.9em;
+  margin: 0.5em 0;
+  padding: 0.5em 0;
   width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-input[type='text']:focus, [type='email']:focus, textarea:focus {
+input[type='text']:focus,
+input[type='email']:focus {
   outline: none;
-  padding: 0 0 0.875em 0;
+  border-bottom: 2px solid black;
 }
 
-.message {
-  float: none;
+textarea {
+  background: transparent; /* Rend le textarea transparent */
+  border: none;
+  border-bottom: 2px solid #FFF;
+  color: #FFF;
+  font-size: 0.9em;
+  margin: 0.5em 0;
+  padding: 0.5em 0;
+  width: 100%;
+  line-height: 150%;
+  height: 100px;
+  resize: none;
+  transition: all 0.3s;
 }
 
-.name {
-  float: left;
-  width: 45%;
+textarea:focus {
+  color: #FFF; /* Le texte devient blanc lorsque le textarea est en focus */
+  outline: none;
+  border-bottom: 2px solid black;
 }
 
 select {
   background: url('http://web.missouri.edu/~blly4b/ISLT7360/FinalProject/FINAL/icon-ios7-arrow-down-32.png') no-repeat right;
+  appearance: none;
   -webkit-appearance: none;
 }
 
@@ -102,44 +70,40 @@ select::-ms-expand {
   display: none;
 }
 
-textarea {
-  line-height: 150%;
-  height: 150px;
-  resize: none;
-  width: 100%;
-}
-
-::-webkit-input-placeholder {
-  color: #FFF;
-}
-
 #form_button {
   background: none;
-  border: solid 2px #FFF;
+  border: 1px solid #FFF;
   color: #FFF;
   cursor: pointer;
   display: block;
   font-family: "Cutive Mono", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
-  outline: none;
-  padding: 15px 25px;
   text-transform: uppercase;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
+  padding: 20px 35px;
+  margin: 15px auto;
   transition: all 0.3s;
-  margin: 0 auto; /* Centre le bouton horizontalement */
-  height: auto; /* Ajustez selon vos besoins */
-  max-height: 550px; /* Ajustez la hauteur maximale */
-  overflow: auto; /* Ajoutez un défilement si le contenu dépasse */
-  position: relative;
 }
 
 #form_button:hover {
   background: black;
   color: #ffffff;
-  position: static;
-  margin: 20px auto;
+}
+
+.form-group.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group.row .col {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-group.row .col:last-child {
+  margin-right: 0;
+}
+
+.footer {
+  margin-top: 20px;
 }
