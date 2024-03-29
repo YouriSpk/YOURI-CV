@@ -43,7 +43,6 @@ class SkillsController < ApplicationController
   end
 
   # DELETE /skills/1
-# DELETE /skills/1
 def destroy
   @skill = Skill.find(params[:id])
   @skill.destroy

@@ -43,8 +43,12 @@ class DegreesController < ApplicationController
 
   # DELETE /degrees/1
   def destroy
+    @degree = Degree.find(params[:id])
     @degree.destroy
-    redirect_to degrees_url, notice: 'Degree was successfully destroyed.'
+    respond_to do |format|
+    format.html { redirect_to degrees_url, notice: 'Degree was successfully destroyed.' }
+    format.json { head :no_content }
+    end
   end
 
   private

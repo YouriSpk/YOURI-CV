@@ -4,7 +4,7 @@ class WorkExperiencesController < ApplicationController
 
   # GET /work_experiences
   def index
-    @work_experiences = WorkExperience.order(end_date: :desc)
+    @work_experiences = WorkExperience.all.order(end_date: :desc)
   end
 
   # GET /work_experiences/1
@@ -43,8 +43,12 @@ class WorkExperiencesController < ApplicationController
 
   # DELETE /work_experiences/1
   def destroy
+    @work_experience = WorkExperience.find(params[:id])
     @work_experience.destroy
-    redirect_to work_experiences_path, status: see_other
+    respond_to do |format|
+      format.html { redirect_to work_experiences_url, notice: 'Work experience was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private

@@ -1,5 +1,3 @@
-<!-- skills/edit.html.erb -->
-
 <%= simple_form_for(@skill, html: { class: 'skill-form', multipart: true }) do |f| %>
   <%= f.error_notification %>
 
@@ -26,6 +24,9 @@
   <div class="actions">
     <%= f.submit class: "btn" %>
   </div>
-  <%= link_to 'Destroy', skill_path(skill), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  <% if @skill.persisted? %>
+    <%= link_to 'Destroy', skill_path(@skill), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 
 <% end %>
