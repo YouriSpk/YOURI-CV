@@ -53,6 +53,7 @@ gem "cloudinary"
 gem "devise"
 gem 'mail_form'
 gem 'dalli'
+gem 'uglifier'
 
 group :development, :test do
   gem "dotenv-rails"
