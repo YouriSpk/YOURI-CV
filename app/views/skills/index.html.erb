@@ -18,7 +18,7 @@
                   <%= image_tag skill.icon %> <!-- Utilisez la méthode image_tag pour afficher l'image -->
                 </div>
               <% end %>
-              <div class="card-body text-center">
+              <div class="card-body text-center" id="skill-layout">
                 <h4 class="card-title"><%= link_to skill.name, skill %></h4>
                 <%= link_to "See details", skill, class: "btn" %>
               </div>
@@ -86,5 +86,4 @@
     font-size: 30px;
   }
 }
-
-    </style>
+</style>

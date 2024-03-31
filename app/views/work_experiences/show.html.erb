@@ -1,41 +1,32 @@
 <body>
   <!-- Bannière avec superposition du h1 -->
-  <div class="banner position-relative d-flex justify-content-center align-items-center mb-4">
+  <div class="banner position-relative">
     <img src="https://images.unsplash.com/photo-1614854262204-ac42b8c25c0e?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="work experience banner">
-    <h1 class="text-white position-absolute bottom-0 start-50 translate-middle-x mb-4">WORK EXPERIENCES</h1>
+    <h1 class="text-white position-absolute bottom-0 start-50 translate-middle-x mb-4 text-center">WORK EXPERIENCES</h1>
   </div>
 
-  <div class="container d-flex justify-content-center align-items-center">
+  <div class="container d-flex justify-content-center align-items-center flex-column mt-5 no-padding">
     <div class="card w-75">
-      <div class="card-body text-center">
-       <dl>
-  <dt>Title :</dt>
-  <dd><%= @work_experience.title %></dd>
-
-  <dt>Company :</dt>
-  <dd>@<%= @work_experience.company %></dd>
-
-  <dt>Description :</dt>
-  <dd><%= @work_experience.description %></dd>
-
-  <dt>When :</dt>
-  <dd>
-    From
-    <span><%= @work_experience.start_date.strftime('%d %B %Y') %></span>
-    to
-    <span><%= @work_experience.end_date ? @work_experience.end_date.strftime('%d %B %Y') : 'Présent' %></span>
-  </dd>
-</dl>
-
-
-        <div class="text-center mt-3">
-          <% if user_signed_in? %>
-            <%= link_to "Edit", edit_work_experience_path(@work_experience), class: "btn btn-primary btn-sm mr-2" %>
+      <div class="card-body">
+        <div class="work-experience-details">
+          <div class="text-center mb-4">
+            <h2><strong>Title :</strong> <%= @work_experience.title %></h2>
+            <p><strong>Company :</strong> @<%= @work_experience.company %></p>
+            <p><strong>Description :</strong></p>
+            <div class="description-text">
+              <%= @work_experience.description %>
+            </div>
+            <p class="mt-4">From <%= @work_experience.start_date.strftime('%d %B %Y') %> to <%= @work_experience.end_date ? @work_experience.end_date.strftime('%d %B %Y') : 'Présent' %></p>
+          </div>
+          <div class="text-center mt-3">
+            <% if user_signed_in? %>
+              <%= link_to "Edit", edit_work_experience_path(@work_experience), class: "btn btn-primary btn-sm mr-2" %>
               <%= turbo_frame_tag "work_experience_#{@work_experience.id}" do %>
               <%= button_to "Delete", work_experience_path(@work_experience), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cette expérience professionnelle ?" }, class: "btn btn-sm mr-2" %>
+              <% end %>
             <% end %>
-          <% end %>
-          <%= link_to "Back", work_experiences_path, class: "btn btn-secondary btn-sm" %>
+            <%= link_to "Back", work_experiences_path, class: "btn btn-secondary btn-sm" %>
+          </div>
         </div>
       </div>
     </div>
@@ -46,8 +37,8 @@
   .banner {
     overflow: hidden;
     position: relative;
-    height: 400px; /* Hauteur de la bannière */
-    width: 100%; /* Largeur de la bannière */
+    height: 400px;
+    width: 100%;
   }
 
   .banner img {
@@ -58,20 +49,41 @@
 
   .banner h1 {
     position: absolute;
-    top: 50%; /* Centrage vertical */
-    left: 50%; /* Centrage horizontal */
-    transform: translate(-50%, -50%); /* Ajustement pour centrer parfaitement */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
     color: white;
     font-family: "Cutive Mono", serif;
     font-size: 70px;
   }
 
+  .no-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .work-experience-icon img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .description-text {
+    text-align: justify;
+  }
+
   @media (max-width: 768px) {
 
+    .banner h1 {
+      font-size: 30px;
+    }
 
-  .banner h1 {
-    font-size: 30px;
+    .card-body{
+      font-size: 12px;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
   }
-}
 </style>

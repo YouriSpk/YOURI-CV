@@ -1,19 +1,18 @@
-// Specific CSS for your home-page
 .background-container {
-  background-image: url('https://images.unsplash.com/photo-1579546929742-63e9b6b4fc56?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Remplacez 'image_name.jpg' par le nom de votre image */
+  background-image: url('https://images.unsplash.com/photo-1579546929742-63e9b6b4fc56?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .home {
-  color: black; /* Couleur du texte */
+  color: black;
   font-size: 70px;
   font-family: "Cutive Mono", serif;
 }
 
 .CV {
-  color: black; /* Couleur du texte */
+  color: black;
   font-size: 40px;
 }
 
@@ -27,5 +26,95 @@
 }
 
 #card-home {
-  border: none; /* Supprime la bordure de la carte */
+  border: none;
+}
+
+.profil-pic {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+@media (max-width: 992px) { /* Tablettes et tailles d'écran plus petites */
+  .home {
+    font-size: 50px;
+  }
+
+  .CV {
+    font-size: 30px;
+  }
+
+  #job {
+    font-size: 18px;
+  }
+
+  #home-card {
+    font-size: 16px;
+  }
+
+  .card-body {
+    font-size: 10px;
+  }
+
+  .profil-pic{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 768px) { /* Téléphones et tailles d'écran très petites */
+  .home {
+    font-size: 40px;
+  }
+
+  .CV {
+    font-size: 25px;
+  }
+
+  #job {
+    font-size: 16px;
+  }
+
+  #home-card {
+    font-size: 14px;
+  }
+
+  .card-body {
+    font-size: 9px;
+  }
+
+  .profil-pic{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 576px) { /* Téléphones et tailles d'écran encore plus petites */
+  .home {
+    font-size: 30px;
+  }
+
+  .CV {
+    font-size: 20px;
+  }
+
+  #job {
+    font-size: 14px;
+  }
+
+  #home-card {
+    font-size: 12px;
+  }
+
+  .card-body {
+    font-size: 8px;
+  }
+
+  .profil-pic{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  }
 }

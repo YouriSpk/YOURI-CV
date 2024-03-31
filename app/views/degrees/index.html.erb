@@ -12,7 +12,7 @@
           <div class="card text-center">
             <div class="card-body">
               <div class="skill-details">
-                <h5 class="card-title"><b><%= degree.degree %></b></h5>
+                <h2 class="card-title"><b><%= degree.degree %></b></h2>
                 <p>@<%= degree.institution %></p>
                 <p>From <%= degree.start_date.strftime('%d %B %Y') %> to <%= degree.end_date ? degree.end_date.strftime('%d %B %Y') : 'Présent' %></p>
                 <%= link_to "Details", degree, class: "btn" %>
@@ -51,12 +51,22 @@
     color: white;
     font-family: "Cutive Mono", serif;
     font-size: 70px;
+    color: black;
   }
 
 @media (max-width: 768px) {
 
-    .banner h1 {
+  .banner h1 {
     font-size: 30px;
   }
+
+  .card-body {
+    font-size: 12px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
 }
 </style>

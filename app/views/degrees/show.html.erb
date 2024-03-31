@@ -2,7 +2,7 @@
   <!-- Bannière avec superposition du h1 -->
   <div class="banner position-relative mb-4">
     <img src="https://images.unsplash.com/photo-1579547621869-0ddb5f237392?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="degree banner">
-    <h1 class="text-white position-absolute bottom-0 start-50 translate-middle-x mb-4">DEGREE DETAILS</h1>
+    <h1 class="text-white position-absolute bottom-0 start-50 translate-middle-x mb-4">DEGREE</h1>
   </div>
 
   <div class="container">
@@ -10,7 +10,7 @@
       <div class="col-md-8">
         <div class="card text-center">
           <div class="card-body">
-            <h1 class="text-center mb-4"><%= @degree.degree %></h1>
+            <h2 class="text-center mb-4"><%= @degree.degree %></h2>
 
             <dl class="mb-4">
               <dt>Institution:</dt>
@@ -19,8 +19,8 @@
               <dt>Degree:</dt>
               <dd><%= @degree.degree %></dd>
 
-              <dt>From:</dt>
-              <dd class="d-inline-block mr-2"><%= @degree.start_date.strftime('%d %B %Y') %></dd>
+              <dt></dt>
+              <dd class="d-inline-block mr-2">From <%= @degree.start_date.strftime('%d %B %Y') %></dd>
               <dd class="d-inline-block">to <%= @degree.end_date ? @degree.end_date.strftime('%d %B %Y') : 'Présent' %></dd>
             </dl>
 
@@ -64,5 +64,15 @@
     color: white;
     font-family: "Cutive Mono", serif;
     font-size: 70px;
+  }
+  @media (max-width: 768px) {
+
+    .banner h1 {
+      font-size: 30px;
+    }
+
+    .card-body{
+      font-size: 12px
+    }
   }
 </style>
