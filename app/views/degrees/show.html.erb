@@ -13,11 +13,13 @@
             <h2 class="text-center mb-4"><%= @degree.degree %></h2>
 
             <dl class="mb-4">
-              <dt>Institution:</dt>
-              <dd><%= @degree.institution %></dd>
+              <dt class="mb-2"><strong>Institution:</strong></dt>
+              <dd class="mb-4"><%= @degree.institution %></dd>
 
-              <dt>Degree:</dt>
-              <dd><%= @degree.degree %></dd>
+              <dt class="mb-2"><strong>Description:</strong></dt>
+              <div class="description-text">
+                <dd class="mb-4"><%= @degree.description %></dd>
+              </div>
 
               <dt></dt>
               <dd class="d-inline-block mr-2">From <%= @degree.start_date.strftime('%d %B %Y') %></dd>
@@ -65,14 +67,23 @@
     font-family: "Cutive Mono", serif;
     font-size: 70px;
   }
+
+  .description-text {
+    text-align: justify;
+  }
+
   @media (max-width: 768px) {
 
     .banner h1 {
       font-size: 30px;
     }
 
-    .card-body{
-      font-size: 12px
+    .card-body {
+      font-size: 12px;
+    }
+
+    h2 {
+      font-size: 18px;
     }
   }
 </style>
