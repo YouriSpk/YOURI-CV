@@ -1,42 +1,86 @@
-<div class="contact" style="margin-top: 70px;">
+<body>
+    <div class="banner position-relative d-flex justify-content-center align-items-center mb-4">
+      <img src="https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="skills banner">
+      <h1 class="text-white position-absolute bottom-0 start-50 translate-middle-x mb-4">CONTACT</h1>
+    </div>
+  <div class="contact" style="margin-top: 70px;">
   <div id="container-form">
-    <h2>Contact</h2>
     <%= form_with scope: :contact_form, url: contacts_path, method: :post, local: true, class: "container" do |form| %>
 
       <div class="form-group row">
-        <div class="col-md-4">
+        <div class="col-md-6">
           <%= form.label :name %>
-          <%= form.text_field :name, class: "form-control", id: "name_input", required: true %>
+          <%= form.text_field :name, class: "form-control form-control-sm", id: "name_input", required: true %>
         </div>
 
-        <div class="col-md-4">
-          <%= form.label :last_name %>
-          <%= form.text_field :last_name, class: "form-control", id: "last_name_input", required: true %>
-        </div>
-
-        <div class="col-md-4 form-group">
+        <div class="col-md-6 form-group">
           <%= form.label :email %>
-          <%= form.email_field :email, class: "form-control", id: "email_input", required: true %>
+          <%= form.email_field :email, class: "form-control form-control-sm", id: "email_input", required: true %>
         </div>
       </div>
 
       <div class="form-group">
         <%= form.label :message %>
-        <%= form.text_area :message, class: "form-control", id: "message_input", required: true, rows: 5 %>
+        <%= form.text_area :message, class: "form-control form-control-sm", id: "message_input", required: true, rows: 4 %>
       </div>
 
-      <%= form.submit "Submit", class: "btn", id: "form_button" %>
+      <%= form.submit "Submit", class: "btn btn-sm", id: "form_button" %>
 
     <% end %>
+    </div>
   </div>
-</div>
+</body>
 
-<% if flash[:notice] %>
-  <div class="alert alert-success">
-    <%= flash[:notice] %>
-  </div>
-<% elsif flash[:alert] %>
-  <div class="alert alert-danger">
-    <%= flash[:alert] %>
-  </div>
-<% end %>
+<style>
+      .title{
+        font-family: "Cutive Mono", serif;
+      }
+
+      .banner {
+        overflow: hidden;
+        position: relative;
+        height: 400px; /* Hauteur de la bannière */
+        width: 100%; /* Largeur de la bannière */
+      }
+
+      .banner h1 {
+        position: absolute;
+        top: 50%; /* Centrage vertical */
+        left: 50%; /* Centrage horizontal */
+        transform: translate(-50%, -50%); /* Ajustement pour centrer parfaitement */
+        z-index: 1;
+        color: white;
+        font-family: "Cutive Mono", serif;
+        font-size: 70px;
+}
+
+      .banner img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+
+      #container-form {
+        border: 1px solid black;
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 10px;
+      }
+
+      .form-control-sm {
+        font-size: 0.8em;
+      }
+
+      /* Pour les écrans de petite taille */
+@media (max-width: 768px) {
+
+  .banner h1 {
+    font-size: 30px;
+  }
+
+  #container-form {
+    margin: 20px 10px; /* Ajout d'une marge sur les côtés pour les petits écrans */
+  }
+}
+
+</style>

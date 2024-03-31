@@ -15,6 +15,10 @@
     <%= f.collection_select :section, ['soft', 'hard'], :itself, :capitalize, {}, class: 'form-control' %>
   </div>
 
+  <div class="field">
+    <%= f.input :description %>
+  </div>
+
   <!-- Champ pour l'icône -->
   <div class="field">
     <%= f.label :icon %>

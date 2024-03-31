@@ -12,7 +12,7 @@
       <div class="row">
         <% @skills.each do |skill| %>
           <div class="col-md-4 mb-4">
-            <div class="card text-center" style="width:400px">
+            <div class="card text-center">
               <% if skill.icon.attached? %>
                 <div class="card-img-top skill-icon" style="width:100%">
                   <%= image_tag skill.icon %> <!-- Utilisez la méthode image_tag pour afficher l'image -->
@@ -60,12 +60,17 @@
         color: white;
         font-family: "Cutive Mono", serif;
         font-size: 70px;
-}
+      }
 
       .banner img {
         object-fit: cover;
         height: 100%;
         width: 100%;
+      }
+
+        .skill-icon img {
+        width: 80px; /* Ajustez la taille de l'icône selon vos besoins */
+        height: 80px; /* Ajustez la taille de l'icône selon vos besoins */
       }
 
       /* Pour les écrans de petite taille */
