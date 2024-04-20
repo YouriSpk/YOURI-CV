@@ -55,6 +55,7 @@ gem 'mail_form'
 gem 'dalli'
 gem 'uglifier'
 gem "mailtrap"
+gem "redis"
 
 group :development, :test do
   gem "dotenv-rails"
